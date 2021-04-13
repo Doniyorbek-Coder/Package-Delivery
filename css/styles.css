@@ -57,6 +57,7 @@ body {
   font-weight: normal;
   background-color: #fff;
   color: var(--darker-text);
+  overflow-x: hidden;
 }
 
 img {
@@ -72,7 +73,8 @@ img {
   margin-right: auto;
 }
 
-.container-header {
+.container-header,
+.container-footer {
   max-width: 1676px;
   padding-left: 20px;
   padding-right: 20px;
@@ -84,24 +86,14 @@ img {
 
 .site-header {
   background: var(--header-bg);
-  width: 100%;
 }
-.fixed-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  width: 100%;
-}
+
 .header-container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
-.main-header {
-  padding-top: 172px;
-}
+
 .site-logo {
   margin-right: 150px;
 }
@@ -210,6 +202,7 @@ img {
   display: flex;
   margin-left: -20px;
   margin-right: -20px;
+  flex-wrap: wrap;
 }
 .main-container {
   width: 724px;
@@ -376,6 +369,7 @@ img {
 .input-group {
   padding: 30px 73px 70px 71px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .input-group__input {
@@ -404,8 +398,11 @@ img {
   color: #ffffff;
   text-decoration: none;
 }
-
-.offer-section__title {
+.offer-section {
+  margin-bottom: 173px;
+}
+.offer-section__title,
+.partnership-section__title {
   margin: 0;
   margin-bottom: 10px;
   font-weight: 500;
@@ -414,7 +411,8 @@ img {
   text-align: center;
   color: #a9a9a9;
 }
-.offer-section__text {
+.offer-section__text,
+.partnership-section__text {
   margin: 0;
   margin-bottom: 94px;
   margin-left: auto;
@@ -438,6 +436,7 @@ img {
   padding-bottom: 66px;
   background: #f6f8ff;
   border-radius: 20px;
+  transition: all 0.4s;
 }
 .offer-item__title {
   margin: 0;
@@ -479,10 +478,161 @@ img {
   background: #5f5ffe;
   box-shadow: 8px 8px 100px 10px rgba(0, 0, 0, 0.1);
 }
-.offer-item:hover .offer-item__text {
+.offer-item:hover p,
+.offer-item__active p {
   color: #dbe1ff;
 }
 
-.offer-item:hover span {
+.offer-item:hover span,
+.offer-item__active span {
   color: #fff;
+}
+
+.account-section {
+  margin-bottom: 178px;
+}
+
+.account-section__description {
+  width: 950px;
+}
+.account-section__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.account-section__img {
+  width: 629px;
+  height: 658px;
+  background-image: url(../images/woman-pattern.svg);
+}
+
+.account-section__title {
+  margin-top: 67px;
+  margin-bottom: 45px;
+  font-weight: bold;
+  font-size: 52px;
+  line-height: 78px;
+}
+
+.account-section__text {
+  margin-bottom: 65px;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 45px;
+  color: #7d7d7d;
+}
+
+.account-section__btn {
+  width: 465px;
+  display: flex;
+  align-items: center;
+  padding: 31px 73px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 37px;
+  background: #21d8e3;
+  border-radius: 10px;
+  position: relative;
+}
+
+.account-section__btn::after {
+  margin-left: 11px;
+  width: 14px;
+  height: 22px;
+  display: block;
+  content: "";
+  background-image: url(../images/right-arrow.svg);
+  position: absolute;
+  top: 39px;
+  right: 46px;
+}
+.partnership-section {
+  margin-bottom: 185px;
+}
+
+.partnership-section__list {
+  padding: 105px 96px;
+  margin: 0;
+  margin-top: 94px;
+  margin-left: 53px;
+  margin-right: 53px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 88px;
+  list-style-type: none;
+  background: #ffffff;
+  box-shadow: 8px 8px 100px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.site-footer {
+  background: var(--darker-text) url(../images/pattern-footer.svg) no-repeat
+    bottom;
+  padding-bottom: 248px;
+}
+
+.site-footer__list {
+  margin: 0;
+  margin-left: 20px;
+  padding: 0;
+  padding-top: 95px;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-footer__item {
+  flex: 1;
+}
+
+.site-footer__item:last-child {
+  text-align: end;
+}
+.site-footer__title {
+  margin: 0;
+  margin-bottom: 54px;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 40px;
+  color: #ffffff;
+}
+.footer-list {
+  margin: 0;
+  padding: 0;
+}
+.footer-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+.footer-link {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 37px;
+  text-decoration: none;
+  color: #ffffff;
+}
+.footer-text {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 37px;
+  color: #ffffff;
+}
+.footer-link:hover {
+  text-decoration: underline;
+}
+.site-footer__item:nth-child(2) .footer-link {
+  font-weight: 600;
+}
+
+.footer-img {
+  display: block;
+  margin-bottom: 25px;
+}
+
+.app-link {
+  display: block;
+  max-width: 203px;
+  margin-left: auto;
 }
